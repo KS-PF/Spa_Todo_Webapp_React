@@ -1,0 +1,21 @@
+.inputTextCss{
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 4px;
+    margin:0;
+    margin-bottom:20px;
+    border: 1px solid rgb(157, 157, 157);
+    width: 90%;
+    height: 34px;
+    text-align: center;
+    align-items: center;
+}
+.inputTextCss:focus{
+    outline: 0;
+    border: 2px solid rgb(84, 84, 84);
+}
+
+
+.inputTextCount{
+    font-size: 16px;
+}

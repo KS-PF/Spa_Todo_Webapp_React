@@ -1,0 +1,16 @@
+.select{
+    outline: none;
+    font-size: 22px;
+    width: fit-content;
+    color:  rgb(84, 84, 84);
+    border: 1px solid rgb(157, 157, 157);
+    border-radius: 6px;
+    padding: 8px 4px;
+    text-align: center;
+}
+.select:focus{
+    border: 2px solid rgb(84, 84, 84);
+}
+.select:hover{
+    cursor: pointer;
+}

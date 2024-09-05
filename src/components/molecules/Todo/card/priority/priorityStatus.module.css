@@ -1,0 +1,22 @@
+.priority{
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    width: 40px;
+    text-align: center;
+    height: min-content;
+    font-size: 16px;
+}
+
+.p1{
+    background-color: rgb(60, 141, 255);
+}
+.p2{
+    background-color: rgb(255, 190, 60);
+}
+.p3{
+    background-color: rgb(255, 60, 60);
+}
+.p4{
+    background-color: rgb(216, 60, 255);
+}

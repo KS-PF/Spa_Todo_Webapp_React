@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+    font-family: serif;
+    background-color: rgb(255, 255, 255);
+    color: rgb(84, 84, 84);
+}
+
+body {
+    line-height: 1.7;
+    color: rgb(84, 84, 84);
+    margin: 0;
+    padding: 0;
+}

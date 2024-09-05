@@ -1,0 +1,22 @@
+.centeredDiv {
+    width: 50%;
+    height: fit-content;
+    padding: 4px;
+    margin-bottom: 40px;
+    text-align: center;
+    height: fit-content;
+    overflow: auto;
+    margin: 0 auto;
+    min-height: 70vh;
+}
+@media (max-width:1000px) {
+    .centeredDiv {
+        width: 80%;
+    }
+}
+@media (max-width:440px) {
+    .centeredDiv {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+}

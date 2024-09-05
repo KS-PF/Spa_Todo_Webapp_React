@@ -1,0 +1,53 @@
+.wrapper{
+    padding: 8px 16px;
+    margin: 16px 0;
+    font-size: 18px;
+    min-width: 180px;
+    overflow: auto;
+    text-align: start;
+    border-radius: 8px;
+    height: fit-content;
+}
+.yet{
+    border: 1px solid rgb(165, 165, 165);
+}
+.done{
+    background-color: rgb(197, 197, 197);
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.checkbox{
+    transform: scale(1.6);
+    margin: 0 8px;
+}
+
+.title{
+    font-size: 24px;
+    margin: 4px 8px;
+    font-weight: bold;
+    word-break: break-all;
+    height: fit-content;
+}
+.title:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.wrapEditOut{
+    overflow: auto;
+    width: 100%;
+    margin: 0;
+}
+.wrapEditIn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    min-width: 480px;
+}
