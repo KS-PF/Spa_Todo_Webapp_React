@@ -1,3 +1,10 @@
+# Spa_Todo_Webapp_React
+
+Todoアプリを作成しました。
+認証周りとバックエンドは、Django rest frameworkを用いて、
+フロントエンドにはreactを利用しました。
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
