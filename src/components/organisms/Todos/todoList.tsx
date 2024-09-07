@@ -1,8 +1,8 @@
 import { ChangeEvent, memo, useEffect, useState } from "react";
-import { useAllTodos } from "../../../Api/todos/useGetTodos";
+import { useAllTodos } from "../../../hooks/api/todos/useGetTodos";
 import { useApiCountContext } from "../../../providers/useApiCountContext";
 import { TodoType } from "../../../types/todoType";
-import { useUpdateTodo } from "../../../Api/todos/usePutTodo";
+import { useUpdateTodo } from "../../../hooks/api/todos/usePutTodo";
 import { SelectBox } from "../../atoms/input/select/selectBox";
 import { Wrapper } from "../../atoms/wrapper/wrapper";
 import { TodoListMolecules } from "../../molecules/Todo/list/todoList";

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useLogout } from "../../../Api/auth/useLogout";
+import { useLogout } from "../../../hooks/api/auth/useLogout";
 import { PrimaryButton } from "../../atoms/button/PrimaryButton";
 import { SecondaryButton } from "../../atoms/button/SecondaryButton";
 import { getUserFromSessionStorage } from "../../../sessionStorage/userSessionStorage";

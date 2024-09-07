@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
-import { urlCommon } from "../../common/urlCommon";
-import { useApiCountContext } from "../../providers/useApiCountContext";
+import { useApiCountContext } from "../../../providers/useApiCountContext";
 import { useNavigate } from "react-router-dom";
-import { SignupType } from "../../types/userType";
+import { SignupType } from "../../../types/userType";
+import { EndpointUrl } from "../endpointUrl";
 
 
 export const useSignUp = () => {
@@ -20,7 +20,7 @@ export const useSignUp = () => {
         setLoading(true);
         setError(false);
 
-        axios.post(urlCommon+'accounts/signup/', {
+        axios.post(EndpointUrl+'accounts/signup/', {
                 "username": data.username,
                 "email": data.email,
                 "nick_name": data.nick_name,

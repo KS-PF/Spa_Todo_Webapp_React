@@ -1,8 +1,8 @@
 import { ChangeEvent, useState } from "react";
-import { usePostTodo } from "../../../Api/todos/usePostTodos";
+import { usePostTodo } from "../../../hooks/api/todos/usePostTodos";
 import { CssWidth } from "../../atoms/css/cssWidth";
 import { PrimaryButton } from "../../atoms/button/PrimaryButton";
-import { useAllTodos } from "../../../Api/todos/useGetTodos";
+import { useAllTodos } from "../../../hooks/api/todos/useGetTodos";
 import { getUserFromSessionStorage } from "../../../sessionStorage/userSessionStorage";
 import { SelectBox } from "../../atoms/input/select/selectBox";
 import { InputText } from "../../atoms/input/text/inputText";

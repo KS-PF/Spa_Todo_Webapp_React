@@ -1,4 +1,4 @@
-import { useSignUp } from '../../../Api/auth/useSignUp';
+import { useSignUp } from '../../../hooks/api/auth/useSignUp';
 import { useState } from 'react';
 import { LoginInputText } from '../../molecules/Auth/input/loginInputText';
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';

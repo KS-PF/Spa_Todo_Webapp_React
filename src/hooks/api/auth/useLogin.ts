@@ -1,10 +1,10 @@
 import axios from "axios";
-import { urlCommon } from "../../common/urlCommon";
 import { useCallback, useState } from "react";
-import { useApiCountContext } from "../../providers/useApiCountContext";
-import { saveUserToSessionStorage } from "../../sessionStorage/userSessionStorage";
-import { UserType } from "../../types/userType";
+import { useApiCountContext } from "../../../providers/useApiCountContext";
+import { saveUserToSessionStorage } from "../../../sessionStorage/userSessionStorage";
+import { UserType } from "../../../types/userType";
 import { useNavigate } from "react-router-dom";
+import { EndpointUrl } from "../endpointUrl";
 
 export const useLogin = () => {
     const [loading, setLoading] = useState(false);
@@ -19,7 +19,7 @@ export const useLogin = () => {
         setLoading(true);
         setError(false);
 
-        axios.post(urlCommon+'accounts/login/', {
+        axios.post(EndpointUrl+'accounts/login/', {
                 "username": username,
                 "password": password,
 

@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
-import { useApiCountContext } from "../../providers/useApiCountContext";
-import { getUserFromSessionStorage } from "../../sessionStorage/userSessionStorage";
-import { EndpointUrl } from "./endpointUrl";
+import { useApiCountContext } from "../../../providers/useApiCountContext";
+import { getUserFromSessionStorage } from "../../../sessionStorage/userSessionStorage";
+import { EndpointUrl } from "../endpointUrl";
 
 export const useDeleteTodo = () => {
     const [loading, setLoading] = useState(false);

@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
-import { TodoType } from "../../types/todoType";
-import { useApiCountContext } from "../../providers/useApiCountContext";
-import { getUserFromSessionStorage } from "../../sessionStorage/userSessionStorage";
-import { EndpointUrl } from "./endpointUrl";
+import { TodoType } from "../../../types/todoType";
+import { useApiCountContext } from "../../../providers/useApiCountContext";
+import { getUserFromSessionStorage } from "../../../sessionStorage/userSessionStorage";
+import { EndpointUrl } from "../endpointUrl";
 
 
 export const useUpdateTodo = () => {

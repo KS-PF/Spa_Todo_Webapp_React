@@ -1,9 +1,9 @@
 import { useState, useCallback } from "react";
 import axios from "axios";
-import { TodoType } from "../../types/todoType";
-import { getUserFromSessionStorage, saveUserToSessionStorage } from "../../sessionStorage/userSessionStorage";
-import { UserType } from "../../types/userType";
-import { EndpointUrl } from "./endpointUrl";
+import { TodoType } from "../../../types/todoType";
+import { getUserFromSessionStorage, saveUserToSessionStorage } from "../../../sessionStorage/userSessionStorage";
+import { UserType } from "../../../types/userType";
+import { EndpointUrl } from "../endpointUrl";
 
 export const useAllTodos = () => {
     const [todoData, setTodoData] = useState<Array<TodoType>>([]);
