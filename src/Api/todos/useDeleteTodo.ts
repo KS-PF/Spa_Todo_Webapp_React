@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
-import { urlCommon } from "../../common/urlCommon";
 import { useApiCountContext } from "../../providers/useApiCountContext";
 import { getUserFromSessionStorage } from "../../sessionStorage/userSessionStorage";
+import { EndpointUrl } from "./endpointUrl";
 
 export const useDeleteTodo = () => {
     const [loading, setLoading] = useState(false);
@@ -17,7 +17,7 @@ export const useDeleteTodo = () => {
             setLoading(true);
             setError(false);
 
-            axios.delete(`${urlCommon}todos/${todoId}/`, {
+            axios.delete(`${EndpointUrl}todos/${todoId}/`, {
                 headers: {
                     Authorization: `Token ${retrievedUser.token}`
                 }

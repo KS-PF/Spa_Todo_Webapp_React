@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
-import { urlCommon } from "../../common/urlCommon";
 import { TodoType } from "../../types/todoType";
 import { useApiCountContext } from "../../providers/useApiCountContext";
 import { getUserFromSessionStorage } from "../../sessionStorage/userSessionStorage";
+import { EndpointUrl } from "./endpointUrl";
 
 
 export const useUpdateTodo = () => {
@@ -20,7 +20,7 @@ export const useUpdateTodo = () => {
             setLoading(true);
             setError(false);
 
-            axios.put(`${urlCommon}todos/${data.id}/`, {
+            axios.put(`${EndpointUrl}todos/${data.id}/`, {
                 "title": data.title,
                 "priority_status": data.priority_status,
                 "is_complete": data.is_complete,

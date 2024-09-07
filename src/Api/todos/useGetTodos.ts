@@ -1,10 +1,9 @@
 import { useState, useCallback } from "react";
 import axios from "axios";
 import { TodoType } from "../../types/todoType";
-import { urlCommon } from "../../common/urlCommon";
 import { getUserFromSessionStorage, saveUserToSessionStorage } from "../../sessionStorage/userSessionStorage";
 import { UserType } from "../../types/userType";
-
+import { EndpointUrl } from "./endpointUrl";
 
 export const useAllTodos = () => {
     const [todoData, setTodoData] = useState<Array<TodoType>>([]);
@@ -15,6 +14,7 @@ export const useAllTodos = () => {
 
 
     const getTodos = useCallback(() => {
+
         if (retrievedUser.is_login){
             console.log("全データの取得");
             setLoading(true);
@@ -22,7 +22,7 @@ export const useAllTodos = () => {
 
 
             axios.get<Array<TodoType>>(
-                urlCommon + 'todos/.json', {
+                EndpointUrl + 'todos/.json', {
                     headers: {
                         Authorization: `token ${retrievedUser.token}`
                     }

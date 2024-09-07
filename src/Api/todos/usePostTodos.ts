@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
-import { urlCommon } from "../../common/urlCommon";
 import { PostTodoType } from "../../types/todoType";
 import { useApiCountContext } from "../../providers/useApiCountContext";
 import { getUserFromSessionStorage } from "../../sessionStorage/userSessionStorage";
+import { EndpointUrl } from "./endpointUrl";
 
 
 export const usePostTodo = () => {
@@ -19,7 +19,7 @@ export const usePostTodo = () => {
             console.log("Todo送信");
             setLoading(true);
             setError(false);
-            axios.post(urlCommon+'todos/', {
+            axios.post(EndpointUrl+'todos/', {
                     "title": data.title,
                     "priority_status": data.priority_status,
                     "is_complete": data.is_complete,
