@@ -28,8 +28,8 @@ export const LoginOrganism = () => {
     };
 
     const inputFields = [
-        { label: "ユーザーID", placeholder: "  ユーザーIDを入力してください", min: 8, max: 48, inputValue: loginUsername, setInputValue: setLoginUsername , is_need_message: false },
-        { label: "パスワード", placeholder: "  パスワードを入力してください", min: 8, max: 48, inputValue: loginPassword, setInputValue: setLoginPassword, type: "password" , is_need_message: false  },
+        { label: "ユーザーID", placeholder: "  ユーザーIDを入力してください", min: 8, max: 48, inputValue: loginUsername, setInputValue: setLoginUsername , is_need_message: false , id:"username"},
+        { label: "パスワード", placeholder: "  パスワードを入力してください", min: 8, max: 48, inputValue: loginPassword, setInputValue: setLoginPassword, type: "password" , is_need_message: false  ,id:"password"},
     ];
 
     return (
@@ -60,6 +60,7 @@ export const LoginOrganism = () => {
                                         setInputValue={field.setInputValue}
                                         type={field.type} 
                                         is_need_message={field.is_need_message} 
+                                        id={field.id}
                                     />
                                 ))
                             }

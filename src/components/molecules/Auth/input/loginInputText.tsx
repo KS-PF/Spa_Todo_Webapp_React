@@ -12,7 +12,8 @@ type Props = {
     max?: number,
     inputValue: string,
     setInputValue: (value: string) => void,
-    is_need_message?: boolean
+    is_need_message?: boolean,
+    id?: string
 }
 
 
@@ -24,7 +25,8 @@ export const LoginInputText: React.FC<Props> = memo((props) => {
         inputValue, 
         setInputValue, 
         type,
-        is_need_message = true 
+        is_need_message = true ,
+        id = ""
     } = props;
 
     const [length, setLength] = React.useState<number>(0);
@@ -60,6 +62,7 @@ export const LoginInputText: React.FC<Props> = memo((props) => {
                 maxLength={max}
                 width="90%"
                 margin="0 0 16px 0"
+                id = {id}
             />
         </div>
     );

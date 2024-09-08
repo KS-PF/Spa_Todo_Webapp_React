@@ -8,6 +8,7 @@ export const apiClient = axios.create({
     headers: {
         'Content-Type': 'application/json',
     },
+    timeout: 6000,
 });
 
 // 認証ヘッダーを付加する関数

@@ -84,8 +84,9 @@ export const SignupOrganism = () => {
                                 max={field.max}
                                 inputValue={field.inputValue}
                                 setInputValue={field.setInputValue}
-                                type={field.type} // オプションのプロパティ
-                                is_need_message={field.is_need_message} // オプションのプロパティ
+                                type={field.type} 
+                                is_need_message={field.is_need_message}
+                                id={`${index}`}
                             />
                         ))
                     }

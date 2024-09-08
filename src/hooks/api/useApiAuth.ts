@@ -12,33 +12,33 @@ export const useLogin = () => {
     const navigate = useNavigate()
     const { apiCount, setApiCount } = useApiCountContext();
 
-    const doLogin = useCallback((username:string, password:string) => {
-        console.log("ログイン");
-        setLoading(true);
-        setError(false);
+    const doLogin = useCallback(async(username:string, password:string) => {
+        try {
+                console.log("ログイン");
+                setLoading(true);
+                setError(false);
 
-        apiClient.post('accounts/login/', { username, password, }).then((result) => {
-            // console.log(result.data);
-            const user:UserType = {
-                is_login: true,
-                username: result.data.username,
-                email: result.data.email,
-                nick_name: result.data.nickname,
-                token: result.data.token,
-                todos: 0
-            };
-            saveUserToSessionStorage(user);
-            navigate('/');
-            alert("ログインしました");
+                const result = await apiClient.post('accounts/login/', { username, password });
 
-        }).catch(() => {
+                const user: UserType = {
+                    is_login: true,
+                    username: result.data.username,
+                    email: result.data.email,
+                    nick_name: result.data.nickname,
+                    token: result.data.token,
+                    todos: 0,
+                };
+                saveUserToSessionStorage(user);
+                navigate('/');
+                alert("ログインしました");
+        } catch {
             setError(true);
             alert("ログインに失敗しました");
 
-        }).finally(() => {
+        } finally {
             setLoading(false);  
             setApiCount(apiCount + 1);
-        });
+        }
     }, [navigate, setApiCount, apiCount])
     return { doLogin, loading, error }
 }
@@ -51,27 +51,27 @@ export const useLogout = () => {
     const navigate = useNavigate()
     const retrievedUser = getUserFromSessionStorage();
 
-    const doLogout = useCallback(() => {
+    const doLogout = useCallback(async() => {
         if(retrievedUser.is_login){
-            console.log("ログアウト");
-            setLoading(true);
-            setError(false);
+            try {
+                console.log("ログアウト");
+                setLoading(true);
+                setError(false);
 
-            apiClient.post('accounts/logout/', {}, authHeader(retrievedUser.token)).then(() => {
+                await apiClient.post('accounts/logout/', {}, authHeader(retrievedUser.token));
                 sessionStorage.clear();
                 navigate('/login');
                 alert("ログアウトしました");
 
-            }).catch((error) => {
+            } catch {
                 setError(true);
                 console.log(error)
 
-            }).finally(() => {
+            } finally {
                 setLoading(false);
-            });
+            }
         }
-    },[navigate, retrievedUser.is_login, retrievedUser.token]);
-    
+    },[error, navigate, retrievedUser.is_login, retrievedUser.token]);
     return { doLogout, loading, error }
 }
 
@@ -82,16 +82,18 @@ export const useSignUp = () => {
     const [error, setError] = useState(false);
     const { apiCount, setApiCount } = useApiCountContext();
     const navigate = useNavigate()
-    const doSignUp = useCallback((data:SignupType) => {
-        console.log("サインアップ");
-        setLoading(true);
-        setError(false);
 
-        apiClient.post('accounts/signup/', data).then(() => {
+    const doSignUp = useCallback(async(data:SignupType) => {
+        try {
+            console.log("サインアップ");
+            setLoading(true);
+            setError(false);
+
+            await apiClient.post('accounts/signup/', data);
             navigate('/login');
             alert('新規登録しました');
 
-        }).catch((error) => {
+        } catch(error:any) {
             setError(true);
             const toMessage: { [key: string]: string } = {
                 username: 'ユーザーネーム',
@@ -103,16 +105,15 @@ export const useSignUp = () => {
             let error_message:string = "";
 
             Object.entries(error.response.data).forEach(([key, value]) => {
-                // console.log(toMessage[key], (value as string[])[0]); 
                 error_message = error_message + `${toMessage[key]}:${value} \n`
             });
 
             alert(error_message);
 
-        }).finally(() => {
+        } finally {
             setLoading(false);
             setApiCount(apiCount + 1);
-        });
+        }
     }, [navigate, setApiCount, apiCount]);
     return { doSignUp, loading, error }
 }
