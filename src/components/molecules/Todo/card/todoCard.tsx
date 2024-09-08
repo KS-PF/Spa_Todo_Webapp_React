@@ -4,11 +4,10 @@ import classes from "./todoCard.module.css";
 import { CssWidth } from '../../../atoms/css/cssWidth';
 import { PrimaryButton } from '../../../atoms/button/PrimaryButton';
 import { TertiaryButton } from '../../../atoms/button/TertiaryButton';
-import { useDeleteTodo } from '../../../../hooks/api/todos/useDeleteTodo';
-import { useUpdateTodo } from '../../../../hooks/api/todos/usePutTodo';
 import { InputText } from '../../../atoms/input/text/inputText';
 import { PriorityStatusCss } from './priority/priorityStatus';
 import { SelectBox } from '../../../atoms/input/select/selectBox';
+import { useDeleteTodo, useUpdateTodo } from '../../../../hooks/api/useApiTodos';
 
 
 type Props = {

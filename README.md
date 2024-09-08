@@ -4,6 +4,12 @@ Todoアプリを作成しました。
 認証周りとバックエンドは、Django rest frameworkを用いて、
 フロントエンドにはreactを利用しました。
 
+## 環境変数の設定
+ルートディレクトリに.envファイルを作成し、以下を記述してください。
+```
+VITE_API_URL= << エンドポイントのURL >>
+```
+
 
 # React + TypeScript + Vite
 

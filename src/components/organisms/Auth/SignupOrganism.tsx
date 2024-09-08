@@ -1,4 +1,3 @@
-import { useSignUp } from '../../../hooks/api/auth/useSignUp';
 import { useState } from 'react';
 import { LoginInputText } from '../../molecules/Auth/input/loginInputText';
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
@@ -6,6 +5,7 @@ import { CssHeight } from '../../atoms/css/cssHeight';
 import { SecondaryButton } from '../../atoms/button/SecondaryButton';
 import { SignupType } from '../../../types/userType';
 import { validateIsAlphanumeric } from '../../molecules/validation/formValidations';
+import { useSignUp } from '../../../hooks/api/useApiAuth';
 
 export const SignupOrganism = () => {
     const { doSignUp, loading, error } = useSignUp();

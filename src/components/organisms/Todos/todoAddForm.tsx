@@ -1,13 +1,13 @@
 import { ChangeEvent, useState } from "react";
-import { usePostTodo } from "../../../hooks/api/todos/usePostTodos";
+// import { usePostTodo } from "../../../hooks/api/todos/usePostTodos";
 import { CssWidth } from "../../atoms/css/cssWidth";
 import { PrimaryButton } from "../../atoms/button/PrimaryButton";
-import { useAllTodos } from "../../../hooks/api/todos/useGetTodos";
 import { getUserFromSessionStorage } from "../../../sessionStorage/userSessionStorage";
 import { SelectBox } from "../../atoms/input/select/selectBox";
 import { InputText } from "../../atoms/input/text/inputText";
 import { WrapperFlex } from "../../atoms/wrapper/wrapperflex";
 import { CustomParagraph1 } from "../../atoms/p/customParagraph1";
+import { useGetTodos, usePostTodo } from "../../../hooks/api/useApiTodos";
 
 
 export const TodoAddForm = () => {
@@ -15,7 +15,7 @@ export const TodoAddForm = () => {
     const [selectValue, setSelectValue] = useState<number>(2);
     const retrievedUser = getUserFromSessionStorage();
     const { doPostTodo, loading, error } = usePostTodo();
-    const { getTodos } = useAllTodos();
+    const { getTodos } = useGetTodos();
 
     if (selectValue < 1 || selectValue > 4) {
         setSelectValue(2);

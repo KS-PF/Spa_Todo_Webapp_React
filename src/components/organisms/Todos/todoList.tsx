@@ -1,17 +1,18 @@
 import { ChangeEvent, memo, useEffect, useState } from "react";
-import { useAllTodos } from "../../../hooks/api/todos/useGetTodos";
+// import { useAllTodos } from "../../../hooks/api/todos/useGetTodos";
 import { useApiCountContext } from "../../../providers/useApiCountContext";
 import { TodoType } from "../../../types/todoType";
-import { useUpdateTodo } from "../../../hooks/api/todos/usePutTodo";
+// import { useUpdateTodo } from "../../../hooks/api/todos/usePutTodo";
 import { SelectBox } from "../../atoms/input/select/selectBox";
 import { Wrapper } from "../../atoms/wrapper/wrapper";
 import { TodoListMolecules } from "../../molecules/Todo/list/todoList";
 import { CssHeight } from "../../atoms/css/cssHeight";
+import { useGetTodos, useUpdateTodo } from "../../../hooks/api/useApiTodos";
 
 
 export const TodoList = memo(() => {
     const [selectedPriority, setSelectedPriority] = useState<number>(0);
-    const { getTodos, todoData, loading:getLoading, error:getError } = useAllTodos();
+    const { getTodos, todoData, loading:getLoading, error:getError } = useGetTodos();
     const { doUpdateTodo } = useUpdateTodo();
     const { apiCount } = useApiCountContext();
 

@@ -12,6 +12,7 @@ type Props = {
     height?: string,
     width?: string; 
     margin?: string,
+    id?: string,
 };
 
 export const InputText: React.FC<Props> = memo((props) => {
@@ -25,6 +26,7 @@ export const InputText: React.FC<Props> = memo((props) => {
         height = "34px",
         width = "100%",
         margin = "0",
+        id = "",
     } = props;
 
     const style = {
@@ -35,6 +37,7 @@ export const InputText: React.FC<Props> = memo((props) => {
 
     return (
         <input 
+            id={id}
             type={type}
             style={style} 
             className={classes.inputTextCss}

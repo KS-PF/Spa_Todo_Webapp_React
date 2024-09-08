@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { useLogout } from "../../../hooks/api/auth/useLogout";
 import { PrimaryButton } from "../../atoms/button/PrimaryButton";
 import { SecondaryButton } from "../../atoms/button/SecondaryButton";
 import { getUserFromSessionStorage } from "../../../sessionStorage/userSessionStorage";
 import { CssHeight } from "../../atoms/css/cssHeight";
+import { useLogout } from "../../../hooks/api/useApiAuth";
 
 export const LogoutOrganism = () => {
     
