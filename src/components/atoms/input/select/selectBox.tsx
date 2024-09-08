@@ -12,6 +12,7 @@ type Props = {
     options: Option[];
     fontSize?: string,
     width?: string,
+    id?: string
 };
 
 export const SelectBox: React.FC<Props> = (props) => {
@@ -19,6 +20,7 @@ export const SelectBox: React.FC<Props> = (props) => {
         selectValue, onChange, options,
         fontSize = "22px",
         width = "fit-content",
+        id = ""
     } = props;
 
     const style = {
@@ -32,6 +34,7 @@ export const SelectBox: React.FC<Props> = (props) => {
             value={selectValue} 
             onChange={onChange}
             style={style}
+            id={id}
         >
             {options.map((option) => (
                 <option key={option.value} value={option.value}>

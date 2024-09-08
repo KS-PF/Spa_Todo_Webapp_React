@@ -105,6 +105,7 @@ export const TodoCard:FC<Props> = memo((props) => {
                                 maxLength={48}
                                 width="50%"
                                 margin="16px 0"
+                                id={`editForm${todo.id}`}
                             />
                     
                             <CssWidth width="4px" />
@@ -139,6 +140,7 @@ export const TodoCard:FC<Props> = memo((props) => {
                     checked={todo.is_complete} 
                     className={classes.checkbox}
                     onChange={handleCheckboxChange} 
+                    id={`checkbox${todo.id}`}
                 /> ：
                 { todo.is_complete ? (
                     <span>作業中に戻す</span>

@@ -67,6 +67,7 @@ export const TodoAddForm = () => {
                     maxLength={48}
                     width="50%"
                     margin="0"
+                    id={"addForm"}
                 />
         
                 <CssWidth width="4px" />
@@ -76,6 +77,7 @@ export const TodoAddForm = () => {
                     onChange={onClickAddSelect} 
                     options={options}
                     width="fit-context"
+                    id="selectBoxAddForm"
                 />
         
                 <CssWidth width="8px" />

@@ -61,6 +61,7 @@ export const TodoList = memo(() => {
                     options={options}
                     width="170px"
                     fontSize="16px"
+                    id="selectBoxTodoList"
                 />
             </Wrapper>
 
