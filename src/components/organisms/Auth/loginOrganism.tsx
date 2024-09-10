@@ -1,16 +1,12 @@
 import { useState } from 'react';
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
 import { CssHeight } from '../../atoms/css/cssHeight';
-import { SecondaryButton } from '../../atoms/button/SecondaryButton';
 import { LoginInputText } from '../../molecules/Auth/input/loginInputText';
 import { useLogin } from '../../../hooks/api/useApiAuth';
 
 
 
 export const LoginOrganism = () => {
-    const onClickReload = () => {
-        window.location.reload();
-    };
 
     const { doLogin, loading, error } = useLogin();
 
@@ -34,20 +30,16 @@ export const LoginOrganism = () => {
 
     return (
         <>
-            {
-                error ? (
-                    <>
-                        <h2>ログインに失敗しました</h2>
-                        <p>以下のボタンからフォームに戻ってください</p>
-                        <SecondaryButton onClick={onClickReload} >
-                            ログインする
-                        </SecondaryButton>
-                    </>
-                    ) : loading ? (
+            { loading ? (
                         <p>ユーザー認証中....</p>
                     ) : (
                         <>
                             <h2>ログイン</h2>
+                            {error ? (
+                                <>
+                                    <p>ログインに失敗しました</p>
+                                </>
+                            ) : null}
                             {   
                                 inputFields.map((field, index) => (
                                     <LoginInputText 

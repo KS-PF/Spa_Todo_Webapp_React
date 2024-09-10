@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { LoginInputText } from '../../molecules/Auth/input/loginInputText';
 import { PrimaryButton } from '../../atoms/button/PrimaryButton';
 import { CssHeight } from '../../atoms/css/cssHeight';
-import { SecondaryButton } from '../../atoms/button/SecondaryButton';
 import { SignupType } from '../../../types/userType';
 import { validateIsAlphanumeric } from '../../molecules/validation/formValidations';
 import { useSignUp } from '../../../hooks/api/useApiAuth';
@@ -45,10 +44,6 @@ export const SignupOrganism = () => {
         }
     };
 
-    const onClickReload = () => {
-        window.location.reload();
-    };
-
     const inputFields = [
         { label: "ユーザーID", placeholder: "ユーザーIDを入力してください", min: 8, max: 48, inputValue: signUpUsername, setInputValue: setSignUpUsername },
         { label: "ニックネーム", placeholder: "ニックネームを入力してください", min: 2, max: 48, inputValue: signUpNickname, setInputValue: setSignUpNickname },
@@ -59,21 +54,17 @@ export const SignupOrganism = () => {
 
     return (
         <>
-            <h2>新規登録</h2>
-                    
-            { error ? (
-                <>
-                    <h2>新規登録に失敗しました</h2>
-                    <p>もう一度入力する場合は以下のボタンからフォームに戻ってください</p>
-                    <SecondaryButton onClick={onClickReload} >
-                        もう一度入力する
-                    </SecondaryButton>
-                </>
-                ) : loading ? (
+            {loading ? (
                     <p>登録中....</p>
-
                 ) : (
                     <>
+                    <h2>新規登録</h2>
+                    
+                    { error ? (
+                        <>
+                            <p>新規登録に失敗しました</p>
+                        </>
+                    ) : null}
                     {   
                         inputFields.map((field, index) => (
                             <LoginInputText 
